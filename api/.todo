@@ -1,0 +1,75 @@
+- Cadastro/Login usuário
+- Tabela com Enum de tipos de atendimentos (rota de listagem tb)
+* Cadastro/Crud de pets para usuário
+* Cadastro de atendimento step por step:
+	* 1. Tipo de antendimento + descrição
+	* 2. ID da Clínica + filial
+	* 
+* Listagem de clínicas (paginado)
+	* OBS: Clínicas são o grupo de várias filiais, então precisamos retornar tanto o id da clinica qnt da filial
+
+// Rotas do cadastro de clínica + filial
+Salvar clinica
+POST /clinic/save
+{ endereço completo + lat long + etc(photo, metodos de pagamento) }
+
+Salvar filial
+POST /clinic/save/filial
+{ clinic_id + infos da filial }
+
+Salvar médico
+POST /clinic/:clinic_id/filial/:filial_id/doctor
+{ infos do médico }
+
+Salvar médico
+POST /clinic/:clinic_id/filial/:filial_id/doctor/:doctor_id/appointment
+{ infos de disponibilidade do médico }
+
+// Rotas de utilidade para cadastro de consulta
+Localizar clinicas na área
+POST /clinic/locate
+{long:0 lat: 0}
+return [{clinicas próximas da long e lat informada}]
+
+Datas disponíveis para tipo de atendimento
+GET /clinic/:id_clinica/filia/:id_filial/dates
+return {dados de dias disponíveis}
+
+Horas disponíveis para tipo de atendimento + data
+POST /clinic/:id_clinica/filia/:id_filial/hours
+{data escolhida}
+return {dados de dias disponíveis}
+
+Médicos disponíveis na filial + data + hora escolhida
+GET /clinic/:clinic_id/filial/:filial_id/doctor/appointment?date=""&hour=""
+return [ médicos ]
+
+Métodos de pagamento disponíveis
+GET /clinic/:clinic_id/filial/:filial_id/payment_methods
+return [ metodos de pagamento disponíveis ]
+
+// Rotas para cadastro de appointment
+
+Rota para passar os passos do formulário com validação exclusiva por step
+POST /appointment/next
+{ step: "stepName", formData: {...} }
+return {...}
+
+
+// Notificações
+GET /notification
+return [ notificações ]
+
+POST /notification/:notification_id
+{ read: true/false }
+
+
+// Rotas para cadastro de pet
+
+
+
+
+
+
+
+
