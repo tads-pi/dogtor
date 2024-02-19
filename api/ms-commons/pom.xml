@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.dogtor</groupId>
 	<artifactId>ms-commons</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>ms-commons</name>
 	<description>Microsserviço responsável por compartilhar coisas em comum dos projetos.</description>
 	<properties>
