@@ -1,11 +1,11 @@
-name: Dogtor APP
+name: Dogtor API
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'app/**'
+      - 'api/**'
 
 jobs:
   autoTag:
